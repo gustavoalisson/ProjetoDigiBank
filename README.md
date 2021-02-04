@@ -1,4 +1,4 @@
-# Projeto DigiBank
+# Projeto DigiBank :bank:
 
 Objetivo do projeto: Desenvolver um projeto utilizando todos os recursos aprendidos no curso de POO do Acaciano Neves. 
 
@@ -17,4 +17,4 @@ Ao logar no sistema o usuário terá a opção de:
 * Consultar o Extrato
 * Sair do sistema
 
-Observação: O projeto está sendo desenvolvido com base nas aulas do professor Acaciano Neves.
+:exclamation: Observação: O projeto está sendo desenvolvido com base nas aulas do professor Acaciano Neves.
