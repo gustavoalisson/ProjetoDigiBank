@@ -1,0 +1,13 @@
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\bin\Debug\netcoreapp3.1\DigitalBank.exe
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\bin\Debug\netcoreapp3.1\DigitalBank.deps.json
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\bin\Debug\netcoreapp3.1\DigitalBank.runtimeconfig.json
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\bin\Debug\netcoreapp3.1\DigitalBank.runtimeconfig.dev.json
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\bin\Debug\netcoreapp3.1\DigitalBank.dll
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\bin\Debug\netcoreapp3.1\DigitalBank.pdb
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\obj\Debug\netcoreapp3.1\DigitalBank.csprojAssemblyReference.cache
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\obj\Debug\netcoreapp3.1\DigitalBank.AssemblyInfoInputs.cache
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\obj\Debug\netcoreapp3.1\DigitalBank.AssemblyInfo.cs
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\obj\Debug\netcoreapp3.1\DigitalBank.csproj.CoreCompileInputs.cache
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\obj\Debug\netcoreapp3.1\DigitalBank.dll
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\obj\Debug\netcoreapp3.1\DigitalBank.pdb
+C:\Users\Alisson Gustavo\source\repos\DigitalBank\DigitalBank\obj\Debug\netcoreapp3.1\DigitalBank.genruntimeconfig.cache
