@@ -43,7 +43,7 @@ namespace DigitalBank.Classes
             }
       
         }
-        // os metodos estão criados privados porque não é necessário permitir o acesso deles de outra classe, pois o metodo TelaPrincipal() já contem os metodos abaixo.
+        //os metodos estão criados privados porque não é necessário permitir o acesso deles de outra classe, pois o metodo TelaPrincipal() já contem os metodos abaixo.
         private static void TelaCriarConta()
         {
             string nome;
