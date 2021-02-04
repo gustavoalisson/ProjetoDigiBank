@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DigitalBank.Classes
 {
-   public abstract class Banco
+    public abstract class Banco
     {
         public Banco()
         {

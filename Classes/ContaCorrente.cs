@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DigitalBank.Classes
+﻿namespace DigitalBank.Classes
 {
     public class ContaCorrente : Conta
     {

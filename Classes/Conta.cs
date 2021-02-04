@@ -1,7 +1,6 @@
 ﻿using DigitalBank.Contratos;
 using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace DigitalBank.Classes
 {
@@ -11,14 +10,13 @@ namespace DigitalBank.Classes
         {
             this.NumeroConta = "0001";
             Conta.NumeroDaContaEmSequencia++;
-            
-
         }
 
         public double Saldo { get; private set; }
         public string NumeroAgencia { get; private set; }
         public string NumeroConta { get; protected set; }
         public static int NumeroDaContaEmSequencia { get; protected set; }
+
         public double ConsultaSaldo()
         {
             return this.Saldo;
@@ -31,7 +29,7 @@ namespace DigitalBank.Classes
 
         public bool Sacar(double valor)
         {
-            if(valor > this.ConsultaSaldo())
+            if (valor > this.ConsultaSaldo())
             {
                 Console.WriteLine("Saque indisponível. ");
                 return false;
@@ -41,7 +39,7 @@ namespace DigitalBank.Classes
                 this.Saldo -= valor;
                 return true;
             }
-            
+
         }
 
         public string GetCodigoDoBanco()

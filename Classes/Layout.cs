@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace DigitalBank.Classes
 {
@@ -63,25 +63,26 @@ namespace DigitalBank.Classes
                  cpf = Console.ReadLine();
                 Console.WriteLine("            ===================================       ");
 
-                do
-                {
+            do
+            {
                 Console.WriteLine("                  Digite a senha senha:               ");
-                 senha = Console.ReadLine();
+                senha = Console.ReadLine();
                 Console.WriteLine("            ===================================       ");
                 Console.WriteLine("                  Confirme a sua senha:               ");
                 confirmaSenha = Console.ReadLine();
-                    if(senha != confirmaSenha)
-                     {
+                if (senha != confirmaSenha)
+                {
                     Console.Clear();
                     Console.WriteLine("As senhas estão diferentes. Digite novamente");
-                    }
+                }
                 Console.WriteLine("            ===================================       ");
 
-            }   while (senha != confirmaSenha);
+            } while (senha != confirmaSenha);
             // Criar conta
 
             ContaCorrente contaCorrente = new ContaCorrente();
-            Pessoa pessoa = new Pessoa();      
+            Pessoa pessoa = new Pessoa();
+
 
             pessoa.SetNome(nome);
             pessoa.SetCPF(cpf);
@@ -93,7 +94,7 @@ namespace DigitalBank.Classes
 
             Console.Clear();
 
-            
+
             Console.WriteLine("                Conta cadastrada com sucesso          ");
             Console.WriteLine("            ===================================       ");
          
