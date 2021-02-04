@@ -1,0 +1,34 @@
+﻿using DigitalBank.Contratos;
+
+
+namespace DigitalBank.Classes
+{
+    public class Pessoa
+    {
+        public string Nome { get; private set; }
+        public string CPF { get; private set; }
+        public string Senha { get; private set; }
+        public string ConfirmaSenha { get; set; }
+        public IConta Conta { get; set; }
+
+        public void SetNome(string nome)
+        {
+            this.Nome = nome;
+        }
+
+        public void SetCPF(string cpf)
+        {
+            this.CPF = cpf;
+        }
+        public void SetSenha(string senha)
+        {
+            this.Senha = senha;
+        }
+
+        public void SetConfirmaSenha(string confirmaSenha)
+        {
+            this.ConfirmaSenha = confirmaSenha;
+        }
+
+    }
+}
