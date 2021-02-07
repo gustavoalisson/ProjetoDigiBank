@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Threading;
 
 namespace DigitalBank.Classes
 {
@@ -37,8 +38,10 @@ namespace DigitalBank.Classes
                         TelaDeLogin();
                         break;
                     default:
-                        Console.WriteLine("Opção inválida, digite uma opção válida.");
-                        Console.WriteLine(" ");
+                    Console.Clear();
+                    Console.WriteLine("            Opção Inválida!                                          ");
+                    Console.WriteLine("            ======================================                   ");
+                    Console.WriteLine("");
                     goto retorna;    
             }
       
@@ -97,9 +100,13 @@ namespace DigitalBank.Classes
 
             Console.WriteLine("                Conta cadastrada com sucesso          ");
             Console.WriteLine("            ===================================       ");
+
+            // esse código aguarda 1 segundo para direcionar para a tela logada
+            Thread.Sleep(1500);
+
+            TelaContaLogada(pessoa);
          
         }
-
 
         private static void TelaDeLogin()
         {
@@ -117,6 +124,129 @@ namespace DigitalBank.Classes
 
             // Realizar login no sistema
 
+            // FirstOrDefault = busca o primeiro ou o único registro dentro da lista pessoas
+            Pessoa pessoa = pessoas.FirstOrDefault(x => x.CPF == cpf && x.Senha == senha);
+
+            if(pessoa != null)
+            {
+                TelaBoasVindas(pessoa);
+
+                TelaContaLogada(pessoa);
+            }
+            else
+            {
+                Console.Clear();
+
+
+                Console.WriteLine("                Usuário não cadastrado                ");
+                Console.WriteLine("            ===================================       ");
+
+                Console.WriteLine();
+                Console.WriteLine();
+            }
+
         }
+
+        private static void TelaBoasVindas(Pessoa pessoa)
+        {
+            string msgIncial = $" Banco:{pessoa.Conta.GetCodigoDoBanco()} | Agência:{pessoa.Conta.GetNumeroAgencia()} | Conta:{pessoa.Conta.GetNumeroConta()} ";
+            Console.WriteLine("");
+            Console.WriteLine($"Olá {pessoa.Nome.ToUpper()}, seja Bem-Vindo!! | {msgIncial}");
+            Console.WriteLine("");
+        }
+
+        private static void TelaContaLogada(Pessoa pessoa)
+        {
+            Console.Clear();
+            retorna:
+
+            TelaBoasVindas(pessoa);
+
+            Console.WriteLine("            Por favor, digite a opção desejada                       ");
+            Console.WriteLine("            ======================================                   ");
+            Console.WriteLine("            1 - Realizar um Depósito                                 ");
+            Console.WriteLine("            ======================================                   ");
+            Console.WriteLine("            2 - Realizar um Saque                                    ");
+            Console.WriteLine("            ======================================                   ");
+            Console.WriteLine("            3 - Consultar seu Saldo                                  ");
+            Console.WriteLine("            ======================================                   ");
+            Console.WriteLine("            4 - Extrato                                              ");
+            Console.WriteLine("            ======================================                   ");
+            Console.WriteLine("            5 - Retornar para a Tela Principal                       ");
+            Console.WriteLine("            ======================================                   ");
+            Console.WriteLine("            6 - Sair                                                 ");
+
+            opcao = int.Parse(Console.ReadLine());
+
+            switch (opcao) 
+            {
+                case 1:
+                    
+                    double realizaDeposito = 0;
+
+                    Console.WriteLine("            Quanto você deseja depositar?                            ");
+                    Console.WriteLine("            ======================================                   ");
+                    realizaDeposito = double.Parse(Console.ReadLine());
+                    pessoa.Conta.Deposita(realizaDeposito);
+
+
+                    Console.WriteLine("            Depósito realizado com sucesso!           ");
+                    Console.WriteLine("            ===================================       ");
+                    Thread.Sleep(1500);
+
+                    TelaContaLogada(pessoa);
+                    
+                 
+                    break;
+                case 2:
+
+                    double realizaSaque = 0;
+
+                    Console.WriteLine($"Seu saldo é de: {pessoa.Conta.ConsultaSaldo()}");
+                    Console.WriteLine("            Quanto você deseja sacar ?                               ");
+                    Console.WriteLine("            ======================================                   ");
+                    realizaSaque = double.Parse(Console.ReadLine());
+                    pessoa.Conta.Sacar(realizaSaque);
+
+                    Console.WriteLine("            Saque realizado com sucesso!              ");
+                    Console.WriteLine("            ===================================       ");
+                    Thread.Sleep(1500);
+
+                    TelaContaLogada(pessoa);
+                    break;
+                case 3:
+                    Console.WriteLine($"Saldo em conta corrente: {pessoa.Conta.ConsultaSaldo()}");
+
+
+                   // TelaContaLogada(pessoa);
+                    
+                    break;
+                case 4:
+                    
+                    break;
+                case 5:
+                    TelaPrincipal();
+                    break;
+                case 6:
+                    Console.Clear();
+                    Console.WriteLine("            Programa encerrado. Volte sempre!!        ");
+                    Console.WriteLine("            ===================================       ");
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.Clear();
+                    Console.WriteLine("            Opção Inválida!                                          ");
+                    Console.WriteLine("            ======================================                   ");
+                    goto retorna;
+            }
+
+        }
+
+        public static void TelaRetornarParaConta()
+        {
+
+        }
+
+
     }
 }
