@@ -36,6 +36,9 @@ namespace DigitalBank.Classes
             }
             else
             {
+                Console.WriteLine("            Saque realizado com sucesso!              ");
+                Console.WriteLine("            ===================================       ");
+
                 this.Saldo -= valor;
                 return true;
             }

@@ -192,34 +192,43 @@ namespace DigitalBank.Classes
 
                     Console.WriteLine("            Depósito realizado com sucesso!           ");
                     Console.WriteLine("            ===================================       ");
-                    Thread.Sleep(1500);
+                    Thread.Sleep(2000);
 
-                    TelaContaLogada(pessoa);
-                    
-                 
+                    Console.Clear();
+                   
+                    TelaRetornarParaConta(pessoa);
+                           
                     break;
                 case 2:
 
                     double realizaSaque = 0;
-
+                   
                     Console.WriteLine($"Seu saldo é de: {pessoa.Conta.ConsultaSaldo()}");
                     Console.WriteLine("            Quanto você deseja sacar ?                               ");
                     Console.WriteLine("            ======================================                   ");
                     realizaSaque = double.Parse(Console.ReadLine());
                     pessoa.Conta.Sacar(realizaSaque);
+                
+                    Thread.Sleep(2000);
+                        
+                    Console.Clear();
 
-                    Console.WriteLine("            Saque realizado com sucesso!              ");
-                    Console.WriteLine("            ===================================       ");
-                    Thread.Sleep(1500);
+                    TelaRetornarParaConta(pessoa);
 
-                    TelaContaLogada(pessoa);
                     break;
                 case 3:
-                    Console.WriteLine($"Saldo em conta corrente: {pessoa.Conta.ConsultaSaldo()}");
 
+                    Console.Clear();
 
-                   // TelaContaLogada(pessoa);
-                    
+                    Console.WriteLine("            Saldo em Conta Corrente                   ");
+                    Console.WriteLine("            ===================================       ");
+
+                    Console.WriteLine("Saldo: " + pessoa.Conta.ConsultaSaldo());
+
+                   
+
+                    TelaRetornarParaConta(pessoa);
+
                     break;
                 case 4:
                     
@@ -242,9 +251,34 @@ namespace DigitalBank.Classes
 
         }
 
-        public static void TelaRetornarParaConta()
+        public static void TelaRetornarParaConta(Pessoa pessoa)
         {
+            Console.WriteLine("            Escolha uma opção abaixo                                 ");
+            Console.WriteLine("            ======================================                   ");
+            Console.WriteLine("            1 - Voltar para a minha Conta                            ");
+            Console.WriteLine("            ======================================                   ");
+            Console.WriteLine("            2 - Retornar para a Tela Principal                       ");
+            Console.WriteLine("            ======================================                   ");
+            Console.WriteLine("            3 - Sair                                                 ");
+            Console.WriteLine("            ======================================                   ");
 
+            opcao = int.Parse(Console.ReadLine());
+
+            switch (opcao)
+            {
+                case 1:
+                    TelaContaLogada(pessoa);
+                    break;
+                case 2:
+                    TelaPrincipal();
+                    break;
+                case 3:
+                    Console.Clear();
+                    Console.WriteLine("            Programa encerrado. Volte sempre!!        ");
+                    Console.WriteLine("            ===================================       ");
+                    Environment.Exit(0);
+                    break;
+            }
         }
 
 
